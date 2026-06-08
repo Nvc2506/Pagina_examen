@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario — Ingeniería de Software</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Resumen de Estudio</div>
+  <h1>Glosario de Ingeniería de Software</h1>
+  <p>Todos los conceptos del examen organizados por número, con definición clara y categoría temática.</p>
+  <div class="stats">
+    <div class="stat"><span class="stat-num" id="total-count">48</span><span class="stat-label">Conceptos</span></div>
+    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Categorías</span></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="search" id="searchInput" placeholder="Buscar concepto o número..." oninput="applyFilters()">
+  </div>
+  <div class="filters">
+    <button class="fbtn active" onclick="setFilter('all',this)">Todos</button>
+    <button class="fbtn" onclick="setFilter('scrum',this)">Scrum/Ágil</button>
+    <button class="fbtn" onclick="setFilter('req',this)">Requisitos</button>
+    <button class="fbtn" onclick="setFilter('uml',this)">UML</button>
+    <button class="fbtn" onclick="setFilter('metod',this)">Metodologías</button>
+    <button class="fbtn" onclick="setFilter('tgs',this)">TGS</button>
+    <button class="fbtn" onclick="setFilter('disenio',this)">Diseño UI/UX</button>
+  </div>
+</div>
+<div class="rcount">Mostrando <strong id="shown-count">48</strong> conceptos</div>
+
+<div class="glosario" id="glosario">
+
+  <div class="entry" data-cat="metod" data-search="1 desarrollo ágil ciclos cortos entrega continua adaptación permanente">
+    <div class="entry-num">1</div>
+    <div class="entry-body">
+      <div class="entry-title">Desarrollo Ágil</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Enfoque de desarrollo basado en <em>ciclos cortos e iterativos</em> con entregas frecuentes y adaptación continua a los cambios del cliente y del entorno.</div>
+      <div class="entry-example">Ejemplo: En lugar de entregar todo al final, se entrega software funcional cada 2-4 semanas.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="2 fuentes terciarias compilaciones información secundaria referencias enciclopédicas">
+    <div class="entry-num">2</div>
+    <div class="entry-body">
+      <div class="entry-title">Fuentes Terciarias</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Compilaciones de información secundaria como <em>enciclopedias, índices y bases de datos bibliográficas</em>. No son la fuente original, sino resúmenes o referencias de otras fuentes.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="3 modelo cascada fases secuenciales waterfall paradigma tradicional">
+    <div class="entry-num">3</div>
+    <div class="entry-body">
+      <div class="entry-title">Modelo Cascada (Waterfall)</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Metodología de desarrollo <em>secuencial y lineal</em> donde cada fase (requisitos → diseño → implementación → pruebas → mantenimiento) debe completarse antes de iniciar la siguiente. Es el modelo más tradicional.</div>
+      <div class="entry-example">Ejemplo: Primero se recopilan TODOS los requisitos, luego se diseña todo, luego se codifica todo, etc.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="4 fase mantenimiento etapa posterior entrega correcciones mejoras">
+    <div class="entry-num">4</div>
+    <div class="entry-body">
+      <div class="entry-title">Fase de Mantenimiento</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Etapa final del ciclo de vida del software donde el sistema ya entregado recibe <em>correcciones de errores, mejoras funcionales y adaptaciones</em> a nuevos requisitos o entornos tecnológicos.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="5 stakeholders interesados personas organizaciones afectan proyecto">
+    <div class="entry-num">5</div>
+    <div class="entry-body">
+      <div class="entry-title">Stakeholders (Interesados)</div>
+      <div class="entry-tags"><span class="tag tgs">TGS / Proyecto</span></div>
+      <div class="entry-def">Personas u organizaciones que tienen <em>interés o son afectadas</em> por el resultado del proyecto. Incluye clientes, usuarios finales, patrocinadores, equipo de desarrollo y reguladores.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="6 sprint backlog tareas seleccionadas product backlog ejecutar">
+    <div class="entry-num">6</div>
+    <div class="entry-body">
+      <div class="entry-title">Sprint Backlog</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Lista de <em>tareas seleccionadas del Product Backlog</em> que el equipo de desarrollo se compromete a completar durante un Sprint específico.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="7 casos de estudio análisis detallado situaciones reales aprendizaje comprensión">
+    <div class="entry-num">7</div>
+    <div class="entry-body">
+      <div class="entry-title">Casos de Estudio</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Técnica de obtención de requisitos mediante el <em>análisis detallado de situaciones reales</em> pasadas para extraer aprendizajes y comprensión del dominio del problema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="8 salida output resultados obtenidos procesamiento sistema">
+    <div class="entry-num">8</div>
+    <div class="entry-body">
+      <div class="entry-title">Salida (Output)</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Resultados producidos por el sistema después del procesamiento de las entradas. En TGS, las <em>salidas son los productos o servicios</em> generados por el sistema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="9 retroalimentación feedback salidas evaluar mejorar sistema">
+    <div class="entry-num">9</div>
+    <div class="entry-body">
+      <div class="entry-title">Retroalimentación (Feedback)</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Mecanismo por el cual las <em>salidas del sistema se usan como entrada</em> para evaluar y ajustar continuamente el funcionamiento, permitiendo la autorregulación y mejora.</div>
+      <div class="entry-example">Ejemplo: Las métricas de software en producción retroalimentan al equipo para mejorar el proceso.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="10 completitud requisitos funciones restricciones necesidades sistema">
+    <div class="entry-num">10</div>
+    <div class="entry-body">
+      <div class="entry-title">Completitud de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Propiedad que garantiza que los requisitos incluyen <em>todas las funciones, restricciones y necesidades del sistema</em> sin omisiones importantes.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="11 priorización requisitos importancia dependencia valor negocio urgencia">
+    <div class="entry-num">11</div>
+    <div class="entry-body">
+      <div class="entry-title">Priorización de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Proceso que ordena los requisitos según <em>importancia, urgencia, valor de negocio y dependencias</em>. Técnicas comunes: MoSCoW (Must/Should/Could/Won't), matriz de priorización.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="12 historia usuario user story funcionalidad perspectiva usuario final">
+    <div class="entry-num">12</div>
+    <div class="entry-body">
+      <div class="entry-title">Historia de Usuario (User Story)</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Descripción corta de una funcionalidad escrita desde la perspectiva del usuario: <em>"Como [rol] quiero [acción] para [beneficio]"</em>. Es la unidad básica de trabajo en metodologías ágiles.</div>
+      <div class="entry-example">Ejemplo: "Como cliente quiero buscar productos por categoría para encontrarlos más rápido."</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="13 kanban tableros visuales control flujo trabajo metodología ágil">
+    <div class="entry-num">13</div>
+    <div class="entry-body">
+      <div class="entry-title">Kanban</div>
+      <div class="entry-tags"><span class="tag scrum">Ágil</span></div>
+      <div class="entry-def">Metodología ágil basada en <em>tableros visuales con columnas</em> (Por hacer / En progreso / Hecho) para controlar el flujo continuo de trabajo y limitar el trabajo en progreso (WIP).</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="14 planificación proyecto definir objetivos recursos actividades desarrollo">
+    <div class="entry-num">14</div>
+    <div class="entry-body">
+      <div class="entry-title">Planificación del Proyecto</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Proceso que establece los <em>objetivos, alcance, recursos, cronograma y actividades</em> necesarias para completar el desarrollo del sistema de software exitosamente.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="15 descomposición funcional técnica dividir sistemas complejos funciones subfunciones pequeñas">
+    <div class="entry-num">15</div>
+    <div class="entry-body">
+      <div class="entry-title">Descomposición Funcional</div>
+      <div class="entry-tags"><span class="tag req">Análisis</span></div>
+      <div class="entry-def">Técnica de análisis que divide sistemas complejos en <em>funciones y subfunciones más pequeñas y manejables</em> para facilitar su comprensión y desarrollo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="16 subproceso componente especializado proceso mayor perteneciente">
+    <div class="entry-num">16</div>
+    <div class="entry-body">
+      <div class="entry-title">Subproceso</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Componente especializado que <em>forma parte de un proceso mayor</em>, encapsulando lógica específica para mayor claridad, modularidad y reutilización.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="disenio" data-search="17 simplicidad diseño software principio buenas prácticas mantenible">
+    <div class="entry-num">17</div>
+    <div class="entry-body">
+      <div class="entry-title">Principio de Simplicidad en Diseño</div>
+      <div class="entry-tags"><span class="tag disenio">Diseño</span></div>
+      <div class="entry-def">Principio que establece que el buen diseño de software busca la <em>simplicidad y claridad</em>, NO la complejidad. Un diseño simple es más fácil de mantener, entender y modificar.</div>
+      <div class="entry-example">⚠️ FALSO: "El diseño debe ser complejo para tener más funcionalidades."</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="18 requisitos emergentes necesidades surgidas desarrollo entendimiento problema">
+    <div class="entry-num">18</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos Emergentes</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Necesidades que <em>surgen durante el proceso de desarrollo</em> a medida que el equipo y el cliente comprenden mejor el problema, sus implicaciones y el contexto del sistema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="19 equipo tiger team especializado resolver problemas críticos rápidamente">
+    <div class="entry-num">19</div>
+    <div class="entry-body">
+      <div class="entry-title">Equipo de Respuesta Rápida</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Grupo de <em>expertos especializados convocados</em> específicamente para resolver problemas críticos o de alta prioridad en el menor tiempo posible.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="20 requisito condición capacidad funcionalidad satisfacer necesidades usuario">
+    <div class="entry-num">20</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisito</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Condición o capacidad que el sistema debe cumplir para <em>satisfacer una necesidad del usuario</em>, un contrato, estándar u otra especificación formalmente impuesta.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="21 requisitos no funcionales restricciones calidad eficiencia seguridad características">
+    <div class="entry-num">21</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos No Funcionales</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Restricciones y características relacionadas con <em>calidad, eficiencia, seguridad y rendimiento</em> del software. No describen qué hace el sistema sino cómo lo hace.</div>
+      <div class="entry-example">Ejemplo: "El sistema debe responder en menos de 2 segundos" o "debe soportar 1000 usuarios simultáneos."</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="22 UML lenguaje modelado unificado diagramar sistemas software">
+    <div class="entry-num">22</div>
+    <div class="entry-body">
+      <div class="entry-title">UML (Unified Modeling Language)</div>
+      <div class="entry-tags"><span class="tag uml">UML</span></div>
+      <div class="entry-def">Lenguaje estándar de modelado visual para <em>diseñar y documentar sistemas de software</em> mediante diagramas: clases, secuencia, casos de uso, actividades, componentes, etc.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="23 scrum sprint backlog product backlog eventos marco ágil">
+    <div class="entry-num">23</div>
+    <div class="entry-body">
+      <div class="entry-title">Scrum</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Marco ágil de gestión de proyectos que utiliza <em>Sprint Backlog, Product Backlog</em> y eventos definidos (Sprint Planning, Daily Scrum, Sprint Review, Retrospectiva) para entregas incrementales.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="24 verificación requisitos consistencia completitud correcta redacción">
+    <div class="entry-num">24</div>
+    <div class="entry-body">
+      <div class="entry-title">Verificación de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Proceso que comprueba que los requisitos están <em>correctamente escritos, son consistentes entre sí y están completos</em>. Responde: ¿estamos construyendo el sistema correctamente?</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="25 entrada input información recursos datos ingresan sistema procesados">
+    <div class="entry-num">25</div>
+    <div class="entry-body">
+      <div class="entry-title">Entrada (Input)</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Información, recursos o datos que <em>ingresan al sistema</em> para ser procesados. En TGS es uno de los componentes fundamentales del modelo sistema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="26 requisitos conjunto condiciones necesarias satisfacer negocio">
+    <div class="entry-num">26</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos del Sistema</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Conjunto de <em>condiciones y capacidades</em> que el sistema debe poseer para satisfacer las necesidades del negocio, del usuario y las restricciones técnicas aplicables.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="27 teoría general sistemas TGS componentes relacionados trabajando conjuntamente">
+    <div class="entry-num">27</div>
+    <div class="entry-body">
+      <div class="entry-title">Teoría General de Sistemas (TGS)</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Enfoque interdisciplinario que estudia los sistemas como <em>conjuntos de elementos interrelacionados</em> que trabajan coordinadamente para alcanzar un objetivo común. Desarrollada por Ludwig von Bertalanffy.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="28 validación requisitos expectativas reales cliente necesidades definidas">
+    <div class="entry-num">28</div>
+    <div class="entry-body">
+      <div class="entry-title">Validación de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Proceso que confirma que los requisitos documentados <em>representan correctamente lo que el cliente necesita</em>. Responde: ¿estamos construyendo el sistema correcto?</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="29 entrevista preguntas datos recopilar participantes dirigidas">
+    <div class="entry-num">29</div>
+    <div class="entry-body">
+      <div class="entry-title">Entrevista</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Técnica de elicitación de requisitos mediante <em>preguntas dirigidas a participantes clave</em> (clientes, usuarios). Puede ser estructurada (preguntas fijas) o no estructurada (abierta).</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="30 fase mantenimiento grupo encargado transferencia sistema ambiente productivo">
+    <div class="entry-num">30</div>
+    <div class="entry-body">
+      <div class="entry-title">Despliegue / Puesta en Producción</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Proceso mediante el cual el <em>equipo transfiere el sistema</em> desarrollado y probado al entorno de producción real donde será utilizado por los usuarios finales.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="31 RUP rational unified process iterativo incremental arquitectura casos uso">
+    <div class="entry-num">31</div>
+    <div class="entry-body">
+      <div class="entry-title">RUP (Rational Unified Process)</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Proceso de desarrollo <em>iterativo e incremental</em> organizado en fases (Inicio, Elaboración, Construcción, Transición), centrado en arquitectura y casos de uso. Más formal que Scrum.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="32 retrospectiva sprint oportunidades mejora daily reunión diaria equipo">
+    <div class="entry-num">32</div>
+    <div class="entry-body">
+      <div class="entry-title">Retrospectiva del Sprint</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Evento Scrum al final de cada Sprint donde el equipo reflexiona sobre su <em>proceso de trabajo para identificar mejoras continuas</em>. ¿Qué hicimos bien? ¿Qué mejorar? ¿Cómo?</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="33 herramienta diagramas visuales online lucidchart draw.io cacoo">
+    <div class="entry-num">33</div>
+    <div class="entry-body">
+      <div class="entry-title">Herramienta de Diagramas Online</div>
+      <div class="entry-tags"><span class="tag uml">UML</span></div>
+      <div class="entry-def">Aplicaciones web como <em>Lucidchart, Draw.io o Cacoo</em> que permiten crear diagramas UML y otros diagramas visuales de forma colaborativa en línea, sin instalar software.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="34 consistencia requisitos evitar conflictos contradicciones ambigüedades especificación">
+    <div class="entry-num">34</div>
+    <div class="entry-body">
+      <div class="entry-title">Consistencia de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Propiedad que garantiza que <em>no existan contradicciones ni ambigüedades</em> entre los diferentes requisitos definidos para el sistema. Todos deben ser coherentes entre sí.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="35 requisitos no funcionales restricciones rendimiento seguridad disponibilidad">
+    <div class="entry-num">35</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos de Calidad (No Funcionales)</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Restricciones relacionadas con <em>rendimiento, seguridad y disponibilidad</em> del sistema. Definen cómo debe comportarse el sistema en términos de calidad del servicio.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="36 requisitos esenciales negocio permanecen vigentes largo tiempo">
+    <div class="entry-num">36</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos Estables / Esenciales</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Requisitos esenciales del negocio que <em>permanecen vigentes durante largo tiempo</em> y no cambian frecuentemente. Son la base sólida del sistema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="37 mantenimiento perfectivo modificar comportamiento software nuevas funciones visibles usuario">
+    <div class="entry-num">37</div>
+    <div class="entry-body">
+      <div class="entry-title">Mantenimiento Perfectivo</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Tipo de mantenimiento que <em>mejora o agrega nuevas funcionalidades</em> al software para satisfacer nuevas necesidades del usuario o mejorar el rendimiento, sin corregir errores.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="38 manifiesto ágil flexibilidad colaboración adaptación continuos">
+    <div class="entry-num">38</div>
+    <div class="entry-body">
+      <div class="entry-title">Principios del Manifiesto Ágil</div>
+      <div class="entry-tags"><span class="tag scrum">Ágil</span></div>
+      <div class="entry-def">Valores que priorizan <em>flexibilidad, colaboración continua y capacidad de adaptación</em> al cambio sobre seguir un plan rígido. Base filosófica de todas las metodologías ágiles.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="39 abstracción dividir sistemas complejos funciones pequeñas facilitar análisis">
+    <div class="entry-num">39</div>
+    <div class="entry-body">
+      <div class="entry-title">Abstracción / Descomposición</div>
+      <div class="entry-tags"><span class="tag req">Análisis</span></div>
+      <div class="entry-def">Técnica que busca <em>dividir sistemas complejos en partes más pequeñas</em> para facilitar su análisis, comprensión y manejo. Principio fundamental en ingeniería de software.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="40 elicitación requisitos recopilar necesidades clientes antes construir solución">
+    <div class="entry-num">40</div>
+    <div class="entry-body">
+      <div class="entry-title">Elicitación de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Proceso de <em>identificar, descubrir y recopilar</em> las necesidades y expectativas del cliente antes de diseñar o desarrollar el sistema. Primera actividad de la ingeniería de requisitos.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="41 requisitos volátiles evolutivos necesidades cambiantes factores tecnológicos organizacionales externos">
+    <div class="entry-num">41</div>
+    <div class="entry-body">
+      <div class="entry-title">Requisitos Volátiles / Evolutivos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Requisitos que <em>cambian durante el desarrollo</em> debido a factores externos como nuevas tecnologías, cambios regulatorios, evolución del mercado o cambios organizacionales.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="42 equipo desarrollo profesionales responsables construcción software proyecto">
+    <div class="entry-num">42</div>
+    <div class="entry-body">
+      <div class="entry-title">Equipo de Desarrollo</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Grupo de <em>profesionales multifuncionales</em> (desarrolladores, diseñadores, testers) responsables de construir, probar y entregar el incremento de software en cada Sprint.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="43 gestión ingeniería requisitos documenta administra desarrollo proyecto">
+    <div class="entry-num">43</div>
+    <div class="entry-body">
+      <div class="entry-title">Gestión de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Disciplina que <em>documenta, organiza, rastrea y controla los cambios</em> en los requisitos a lo largo de todo el ciclo de vida del proyecto, asegurando trazabilidad.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="44 metodología secuencial análisis implementación fases">
+    <div class="entry-num">44</div>
+    <div class="entry-body">
+      <div class="entry-title">Metodología Secuencial con Análisis Previo</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Metodología donde primero se realiza <em>análisis completo y luego implementación</em>. Similar al modelo cascada pero con énfasis en la fase de análisis antes de cualquier desarrollo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="45 fase mantenimiento etapa corregir errores después entrega software">
+    <div class="entry-num">45</div>
+    <div class="entry-body">
+      <div class="entry-title">Fase de Mantenimiento Post-Entrega</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Etapa dedicada a <em>corregir errores, resolver defectos</em> y realizar ajustes al software después de su entrega oficial al cliente y puesta en producción.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="46 evaluación requisitos viables recursos técnicos organizacionales disponibles">
+    <div class="entry-num">46</div>
+    <div class="entry-body">
+      <div class="entry-title">Evaluación de Viabilidad de Requisitos</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Proceso que evalúa si los requisitos son <em>realizables con los recursos técnicos y organizacionales disponibles</em>, considerando tiempo, presupuesto y capacidades del equipo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="47 burndown chart gráfico trabajo restante tiempo disponible sprint">
+    <div class="entry-num">47</div>
+    <div class="entry-body">
+      <div class="entry-title">Burndown Chart</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Gráfico que muestra el <em>trabajo restante frente al tiempo disponible</em> en un Sprint. Permite al equipo visualizar si van al ritmo correcto para completar el Sprint Backlog.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="48 método delphi expertos anónimos consenso requisitos iterativo">
+    <div class="entry-num">48</div>
+    <div class="entry-body">
+      <div class="entry-title">Método Delphi</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Técnica de obtención de requisitos donde <em>expertos responden cuestionarios de forma anónima e iterativa</em> hasta llegar a un consenso. Elimina sesgos de la interacción directa entre expertos.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="49 cuestionario encuesta preguntas estandarizadas múltiples usuarios recopilar información">
+    <div class="entry-num">49</div>
+    <div class="entry-body">
+      <div class="entry-title">Cuestionario / Encuesta</div>
+      <div class="entry-tags"><span class="tag req">Requisitos</span></div>
+      <div class="entry-def">Técnica de elicitación que recopila información mediante <em>preguntas estandarizadas aplicadas a múltiples usuarios</em> simultáneamente. Eficiente para grandes grupos de stakeholders.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="50 RAD rapid application development prototipos ciclos frecuentes construcción rápida">
+    <div class="entry-num">50</div>
+    <div class="entry-body">
+      <div class="entry-title">RAD (Rapid Application Development)</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Metodología de desarrollo que utiliza <em>prototipos rápidos y ciclos frecuentes</em> de construcción para entregar software en menor tiempo, con fuerte participación del usuario.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="51 storyboard secuencia visual experiencia usuario funcionalidad sistema">
+    <div class="entry-num">51</div>
+    <div class="entry-body">
+      <div class="entry-title">Storyboard</div>
+      <div class="entry-tags"><span class="tag uml">Diseño</span></div>
+      <div class="entry-def">Representación visual <em>secuencial</em> que muestra cómo un usuario interactúa con el sistema paso a paso. Usado en UX para planificar flujos de usuario antes del desarrollo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="52 sistema conjunto organizado componentes interactúan alcanzar objetivo específico">
+    <div class="entry-num">52</div>
+    <div class="entry-body">
+      <div class="entry-title">Sistema</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Conjunto organizado de <em>componentes interrelacionados que interactúan</em> entre sí para alcanzar un objetivo específico. Concepto central de la Teoría General de Sistemas.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="53 product owner administra prioridades backlog producto maximiza valor">
+    <div class="entry-num">53</div>
+    <div class="entry-body">
+      <div class="entry-title">Product Owner</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Rol en Scrum responsable de <em>priorizar el Product Backlog y maximizar el valor</em> entregado al cliente. Es el representante del negocio dentro del equipo Scrum.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="54 sprint período corto fijo desarrollar funcionalidades iteración scrum">
+    <div class="entry-num">54</div>
+    <div class="entry-body">
+      <div class="entry-title">Sprint</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Iteración de <em>duración fija (1 a 4 semanas)</em> en Scrum durante la cual el equipo desarrolla un incremento funcional y potencialmente entregable del producto.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="metod" data-search="55 ciclo vida software SDLC etapas organizadas desarrollo">
+    <div class="entry-num">55</div>
+    <div class="entry-body">
+      <div class="entry-title">Ciclo de Vida del Software (SDLC)</div>
+      <div class="entry-tags"><span class="tag metod">Metodología</span></div>
+      <div class="entry-def">Conjunto de <em>fases ordenadas</em> que guían el desarrollo de un sistema: planificación → análisis → diseño → desarrollo → pruebas → despliegue → mantenimiento.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="56 subsistema parte sistema mayor funciones específicas relacionadas">
+    <div class="entry-num">56</div>
+    <div class="entry-body">
+      <div class="entry-title">Subsistema</div>
+      <div class="entry-tags"><span class="tag tgs">TGS</span></div>
+      <div class="entry-def">Parte de un sistema mayor que <em>tiene funciones específicas relacionadas entre sí</em>. A su vez puede ser visto como un sistema completo con sus propias entradas, procesos y salidas.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="57 caso de uso interacciones usuario sistema objetivo negocio actor">
+    <div class="entry-num">57</div>
+    <div class="entry-body">
+      <div class="entry-title">Caso de Uso</div>
+      <div class="entry-tags"><span class="tag uml">UML</span></div>
+      <div class="entry-def">Descripción de cómo un <em>actor (usuario o sistema externo) interactúa con el sistema</em> para lograr un objetivo de negocio específico. Base del modelado funcional en UML.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="tgs" data-search="58 almacén datos data store componente guardar información uso posterior">
+    <div class="entry-num">58</div>
+    <div class="entry-body">
+      <div class="entry-title">Almacén de Datos (Data Store)</div>
+      <div class="entry-tags"><span class="tag tgs">Análisis</span></div>
+      <div class="entry-def">Componente en diagramas de flujo de datos que <em>persiste información</em> para ser utilizada en procesos posteriores del sistema. Representa bases de datos, archivos o registros.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="req" data-search="59 casos prueba valida requisitos condiciones pasos resultados esperados">
+    <div class="entry-num">59</div>
+    <div class="entry-body">
+      <div class="entry-title">Casos de Prueba</div>
+      <div class="entry-tags"><span class="tag req">Pruebas</span></div>
+      <div class="entry-def">Documentos que definen <em>condiciones de entrada, pasos a ejecutar y resultados esperados</em> para verificar que un requisito específico del sistema funciona correctamente.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="60 kanban optimiza flujo trabajo visualización tareas tablero columnas">
+    <div class="entry-num">60</div>
+    <div class="entry-body">
+      <div class="entry-title">Kanban (Flujo Visual)</div>
+      <div class="entry-tags"><span class="tag scrum">Ágil</span></div>
+      <div class="entry-def">Sistema que optimiza el <em>flujo de trabajo mediante visualización de tareas</em> en un tablero con columnas. Limita el WIP (Work In Progress) para mejorar la eficiencia del equipo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="61 product owner maximizar valor producto priorizar backlog responsable">
+    <div class="entry-num">61</div>
+    <div class="entry-body">
+      <div class="entry-title">Responsabilidades del Product Owner</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">El Product Owner es responsable de <em>maximizar el valor del producto y priorizar el backlog</em>. Define qué se construye primero según el valor de negocio.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="62 scrum master responsable eliminar impedimentos equipo facilitador">
+    <div class="entry-num">62</div>
+    <div class="entry-body">
+      <div class="entry-title">Scrum Master</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Facilitador de Scrum cuya principal responsabilidad es <em>eliminar obstáculos e impedimentos</em> que dificulten el avance del equipo, y asegurar que se sigan los principios de Scrum.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="scrum" data-search="63 scrum board tablero visual seguimiento trabajo sprint tareas estado">
+    <div class="entry-num">63</div>
+    <div class="entry-body">
+      <div class="entry-title">Scrum Board (Tablero Scrum)</div>
+      <div class="entry-tags"><span class="tag scrum">Scrum</span></div>
+      <div class="entry-def">Tablero visual que muestra el estado de las tareas del Sprint: <em>Por hacer / En progreso / Terminado</em>. Facilita la transparencia y el seguimiento del trabajo del equipo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="disenio" data-search="64 prototipo construcción preliminar validar ideas desarrollo">
+    <div class="entry-num">64</div>
+    <div class="entry-body">
+      <div class="entry-title">Prototipo</div>
+      <div class="entry-tags"><span class="tag disenio">Diseño</span></div>
+      <div class="entry-def">Versión inicial o preliminar del software construida para <em>explorar ideas, validar conceptos y obtener retroalimentación</em> temprana del cliente antes del desarrollo completo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="75 visibilidad modificadores acceso atributos operaciones clase UML público privado protegido">
+    <div class="entry-num">75</div>
+    <div class="entry-body">
+      <div class="entry-title">Visibilidad en UML</div>
+      <div class="entry-tags"><span class="tag uml">UML</span></div>
+      <div class="entry-def">Define quién puede acceder a atributos u operaciones: <em>público (+), privado (-), protegido (#), paquete (~)</em>. Implementa el principio de encapsulamiento en el modelado orientado a objetos.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="uml" data-search="76 relaciones asociaciones conexiones clases modelado UML">
+    <div class="entry-num">76</div>
+    <div class="entry-body">
+      <div class="entry-title">Relaciones entre Clases (UML)</div>
+      <div class="entry-tags"><span class="tag uml">UML</span></div>
+      <div class="entry-def">Conexiones entre clases en UML: <em>asociación, agregación, composición, dependencia y generalización</em>. Representan cómo los objetos se relacionan y colaboran en el sistema.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="disenio" data-search="78 prototipo alta fidelidad hi-fi visual funcional producto digital">
+    <div class="entry-num">78</div>
+    <div class="entry-body">
+      <div class="entry-title">Prototipo de Alta Fidelidad (Hi-Fi)</div>
+      <div class="entry-tags"><span class="tag disenio">Diseño UI/UX</span></div>
+      <div class="entry-def">Representación <em>visual detallada y funcional</em> del producto final, con interacciones reales, colores, tipografías y flujos completos. Muy cercano al producto definitivo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="disenio" data-search="79 mockup diseño estático visual apariencia futura fabricación definitiva">
+    <div class="entry-num">79</div>
+    <div class="entry-body">
+      <div class="entry-title">Mockup</div>
+      <div class="entry-tags"><span class="tag disenio">Diseño UI/UX</span></div>
+      <div class="entry-def">Representación <em>estática y visual</em> de la interfaz que muestra el diseño final con colores y elementos reales, pero sin interactividad funcional. Entre wireframe y prototipo.</div>
+    </div>
+  </div>
+
+  <div class="entry" data-cat="disenio" data-search="80 diseño UX UI experiencia usuario visual atractiva accesible eficiente">
+    <div class="entry-num">80</div>
+    <div class="entry-body">
+      <div class="entry-title">Diseño UI/UX</div>
+      <div class="entry-tags"><span class="tag disenio">Diseño UI/UX</span></div>
+      <div class="entry-def">Disciplina orientada a crear interfaces <em>atractivas, intuitivas, accesibles y eficientes</em> que maximicen la satisfacción del usuario final al interactuar con el sistema.</div>
+    </div>
+  </div>
+<script>
+  let currentFilter = 'all';
+
+  function setFilter(cat, btn) {
+    currentFilter = cat;
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    const entries = document.querySelectorAll('.entry');
+    let count = 0;
+    entries.forEach(e => {
+      const catMatch = currentFilter === 'all' || e.dataset.cat === currentFilter;
+      const searchMatch = !q || e.dataset.search.includes(q) || e.innerText.toLowerCase().includes(q);
+      if (catMatch && searchMatch) {
+        e.classList.remove('hidden');
+        count++;
+      } else {
+        e.classList.add('hidden');
+      }
+    });
+    document.getElementById('shown-count').textContent = count;
+  }
+
+  document.getElementById('shown-count').textContent = document.querySelectorAll('.entry').length;
+  document.getElementById('total-count').textContent = document.querySelectorAll('.entry').length;
+</script>
+</div>
+
+</body>
+</html>
